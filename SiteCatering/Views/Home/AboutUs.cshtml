@@ -1,0 +1,289 @@
+﻿@inject IConfiguration config
+@{
+    AppConfig? appConfig = config.GetSection("Project").Get<AppConfig>();
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+<!-- Раздел "О нас" -->
+<section class="hero-section">
+    <div class="container">
+        <header class="major">
+            <h1>О нас</h1>
+            <p>Рады видеть вас в нашем кейтеринге, где традиционная кухня встречается с современным сервисом!</p>
+        </header>
+    </div>
+</section>
+
+
+<!-- Раздел "Наша история" -->
+<section class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="image fit">
+                    <img src="~/img/AboutUs1.jpg" alt="Наш интерьер" />
+                </div>
+
+                <p>
+                    Я начинала свой путь с самого начала, ещё в юнешестве я поняла что хочу радовать людей изысканными блюдами. 
+                    Успев порабоать в различных заведениях на всех должностях, от офицанта до управляющей,
+                    Я смогла проникнуться каждой деталью работы с людьми и сейчас воплощаю всё самое лучшие. 
+
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>Наша история</h2>
+                <p>
+                    Основанное в 2018 году, наше кафе началось как маленький проект.
+                    С тех пор мы растём, предлагая лучшие блюда из разных кухонь мира.
+                    
+                </p>
+                <p>
+                    Мы используем только лучшие ингредиенты, чтобы обеспечить
+                    высочайшее качество каждой трапезы. Откройте для себя
+                    вкусы, которые останутся в памяти! 
+                    Вам нужно только обратиться к нам, остальное мы сделаем за вас.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Раздел "Миссия, ценности, команда" -->
+<section class="mission-section">
+    <div class="container">
+        <header class="section-header text-center mb-5">
+            <h1>Наши ценности и миссия</h1>
+            <p class="lead">
+                Добро пожаловать в наше уютное заведение, где традиционная кухня встречается с современным сервисом!
+            </p>
+        </header>
+
+        <div class="row justify-content-center">
+            <!-- Миссия -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <div class="icon-wrapper mb-3">
+                            <i class="bi bi-target text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="card-title">Наша миссия</h5>
+                        <p class="card-text">
+                            Создавать незабываемые пищевые впечатления, объединяя традиции и инновации в каждой тарелке.
+                            Мы стремимся превратить обычный приём пищи в особенное событие.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ценности -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <div class="icon-wrapper mb-3">
+                            <i class="bi bi-heart text-danger" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="card-title">Наши ценности</h5>
+                        <ul class="list-unstyled card-text">
+                            <li><i class="bi bi-check-circle text-success"></i> Качество продуктов</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Свежесть ингредиентов</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Гостеприимство</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Внимание к деталям</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Забота о гостях</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Команда -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <div class="icon-wrapper mb-3">
+                            <i class="bi bi-people text-info" style="font-size: 2rem;"></i>
+                        </div>
+                        <h5 class="card-title">Наша команда</h5>
+                        <p class="card-text">
+                            Кулинары, менеджеры и официанты — все мы преданы одному: чтобы ваш визит стал особенным.
+                            Каждый член команды проходит строгий отбор и регулярное обучение.
+                        </p>
+                        <p class="mt-2 text-muted small">
+                            Более 50 профессионалов работают для вашего комфорта.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Дополнительные принципы -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="bg-light p-4 rounded">
+                    <h4 class="mb-4">Наши ключевые принципы работы</h4>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h6><i class="bi bi-leaf text-success"></i> Экологичность</h6>
+                            <p class="text-muted">
+                                Мы используем перерабатываемую упаковку и поддерживаем местных производителей.
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6><i class="bi bi-clock text-warning"></i> Пунктуальность</h6>
+                            <p class="text-muted">
+                                Гарантируем соблюдение временных рамок при обслуживании и доставке.
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6><i class="bi bi-hand-thumbs-up text-primary"></i> Обратная связь</h6>
+                            <p class="text-muted">
+                                Внимательно прислушиваемся к пожеланиям гостей и постоянно совершенствуемся.
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h6><i class="bi bi-award text-gold"></i> Профессионализм</h6>
+                            <p class="text-muted">
+                                Наши повара — обладатели профессиональных наград и участники кулинарных конкурсов.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Раздел "Наши партнеры" -->
+<section class="team-section">
+    <div class="container">
+        <header class="major">
+            <h2>Здесь представленны бакнеты которые мы проводили в прошлом</h2>
+        </header>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="dish-card" style="text-align: center;">
+                    <div class="image fit">
+                        <img src="~/img/banket_1.jpg" alt="Фотография банкета" />
+                    </div>
+                    <div class="CardBody">
+                        <h4>День металлурга</h4>
+                        <p><strong>Шеф-повар</strong></p>
+                        <p>Банкет проведенный в ДК краза</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dish-card" style="text-align: center;">
+                    <div class="image fit">
+                        <img src="~/img/banket_2.jpg" alt="Фотография банкета" />
+                    </div>
+                    <div class="CardBody">
+                        <h4>Сбербанк</h4>
+                        <p><strong>Менеджер</strong></p>
+                        <p>Мероприятие Сбербанка</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dish-card" style="text-align: center;">
+                    <div class="image fit">
+                        <img src="~/img/banket_3.jpg" alt="Фотография банкета" />
+                    </div>
+                    <div class="CardBody">
+                        <h4>День учителя</h4>
+                        <p><strong>Старший официант</strong></p>
+                        <p>День учителя в школе №15</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dish-card" style="text-align: center;">
+                    <div class="image fit">
+                        <img src="~/img/banket_1.jpg" alt="Фотография банкета" />
+                    </div>
+                    <div class="CardBody">
+                        <h4>День металлурга</h4>
+                        <p><strong>Шеф-повар</strong></p>
+                        <p>Банкет проведенный в ДК краза</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dish-card" style="text-align: center;">
+                    <div class="image fit">
+                        <img src="~/img/banket_2.jpg" alt="Фотография банкета" />
+                    </div>
+                    <div class="CardBody">
+                        <h4>Сбербанк</h4>
+                        <p><strong>Менеджер</strong></p>
+                        <p>Мероприятие Сбербанка</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="dish-card" style="text-align: center;">
+                    <div class="image fit">
+                        <img src="~/img/banket_3.jpg" alt="Фотография банкета" />
+                    </div>
+                    <div class="CardBody">
+                        <h4>День учителя</h4>
+                        <p><strong>Старший официант</strong></p>
+                        <p>День учителя в школе №15</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Раздел "Контакты" -->
+<section class="contact-section">
+    <div class="container">
+        <header class="major">
+            <h2>Свяжитесь с нами</h2>
+        </header>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Адрес</h3>
+                <p>ул. Ленина, 42, Москва, Россия</p>
+                <h3>Телефон</h3>
+                <a href="tel:@appConfig?.Company.CompanyPhoneShort">@appConfig?.Company.CompanyPhone</a></li>
+            </div>
+            <div class="col-md-6">
+                <h3>Время работы</h3>
+                <p>
+                    Понедельник – Пятница: 9:00 – 22:00<br>
+                    Суббота – Воскресенье: 10:00 – 23:00
+                </p>
+                <h3>Email</h3>
+                <a href="tel:@appConfig?.Company.CompanyEmail">@appConfig?.Company.CompanyEmail</a></li>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Призыв к действию -->
+<section class="cta-section">
+    <div class="container">
+        <header class="major">
+            <h2>Посетите нас сегодня!</h2>
+            <p>Готовы к вкусному приключению? Забронируйте столик или закажите доставку прямо сейчас.</p>
+            <a href="@Url.Action("/")" class="btn btn-primary">Посмотреть меню</a>
+        </header>
+    </div>
+</section>

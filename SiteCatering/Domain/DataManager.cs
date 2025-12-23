@@ -4,7 +4,7 @@ namespace SiteCatering.Domain
 {
     public class DataManager
     {
-        public IDishRepository DishRepository {get; set; }
+        public virtual IDishRepository DishRepository { get; set; }
 
         public DataManager(IDishRepository dishRepository)
         {

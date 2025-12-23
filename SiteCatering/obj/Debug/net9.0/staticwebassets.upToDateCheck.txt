@@ -1,23 +1,22 @@
 wwwroot\css\addition.css
+wwwroot\css\Dish.css
 wwwroot\css\fontawesome-all.min.css
 wwwroot\css\main.css
 wwwroot\css\main.min.css
 wwwroot\img\20170427-20873.jpg
+wwwroot\img\AboutUs1.jpg
+wwwroot\img\banket_1.jpg
+wwwroot\img\banket_2.jpg
+wwwroot\img\banket_3.jpg
+wwwroot\img\cart (1).docx
+wwwroot\img\cart (2).docx
+wwwroot\img\cart (3).docx
+wwwroot\img\cart (4).docx
+wwwroot\img\cart.docx
 wwwroot\img\DSC_1335.JPG
 wwwroot\img\Home_first.jpg
 wwwroot\img\images.webp
 wwwroot\img\IMG_9614.JPG
-wwwroot\img\pic01.jpg
-wwwroot\img\pic02.jpg
-wwwroot\img\pic03.jpg
-wwwroot\img\pic04.jpg
-wwwroot\img\pic05.jpg
-wwwroot\img\pic06.jpg
-wwwroot\img\pic07.jpg
-wwwroot\img\pic08.jpg
-wwwroot\img\pic09.jpg
-wwwroot\img\pic10.jpg
-wwwroot\img\pic11.jpg
 wwwroot\img\Sport.jpg
 wwwroot\img\Ассорти брускет №1.JPG
 wwwroot\img\Ассорти брускет №2.JPG
@@ -121,19 +120,20 @@ wwwroot\webfonts\fa-solid-900.svg
 wwwroot\webfonts\fa-solid-900.ttf
 wwwroot\webfonts\fa-solid-900.woff
 wwwroot\webfonts\fa-solid-900.woff2
-C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\fontawesome-all.min.css
-C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\main.css
-C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\main.min.css
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\quality.js
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\AdminMenu.js
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\main.min.css
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\main.css
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\main.js
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\jquery.min.js
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\scripts.js
-C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\scripts.min.js
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\addition.css
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\browser.min.js
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\webfonts\fa-solid-900.svg
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\breakpoints.min.js
-C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\quality.js
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\fontawesome-all.min.css
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\webfonts\fa-regular-400.svg
-C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\addition.css
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\scripts.min.js
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\webfonts\fa-brands-400.svg
 C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\js\util.js
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\css\Dish.css

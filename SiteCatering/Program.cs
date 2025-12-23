@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using SiteCatering.Domain;
 using SiteCatering.Domain.Repositories.Abstract;
-using SiteCatering.Domain.Repositories.EntityFramework;
 using SiteCatering.Infrastructure;
 
 namespace SiteCatering
@@ -14,28 +13,30 @@ namespace SiteCatering
         public static async Task Main(string[] args)
         {
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
-           
 
-            //Подключение appsettings.json
-            IConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
-                .SetBasePath(builder.Environment.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddEnvironmentVariables();
+            // УДАЛЯЕМ РУЧНУЮ ЗАГРУЗКУ CONFIGURATIONBUILDER
+            // Оставляем ТОЛЬКО builder.Configuration — он уже настроен по умолчанию!
 
-            //Project в обьектную форму
-            IConfiguration configuration = configurationBuilder.Build();
-            AppConfig config = configuration.GetSection("Project").Get<AppConfig>()!;
+            // Теперь builder.Configuration автоматически:
+            // - читает appsettings.json
+            // - читает appsettings.Development.json (если ASPNETCORE_ENVIRONMENT=Development)
+            // - читает переменные окружения и др.
+
+            // Получаем конфигурацию
+            AppConfig config = builder.Configuration
+                .GetSection("Project")
+                .Get<AppConfig>()!;
 
             // Подключаем базу данных
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseNpgsql(config.DataBase.ConnectionString)
-                .ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning)));
+                .ConfigureWarnings(warnings =>
+                    warnings.Ignore(RelationalEventId.PendingModelChangesWarning)));
 
             builder.Services.AddTransient<IDishRepository, EFDishRepository>();
             builder.Services.AddTransient<DataManager>();
 
-
-            //Настройка identity систему
+            // Настройка Identity
             builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
             {
                 options.User.RequireUniqueEmail = true;
@@ -44,9 +45,11 @@ namespace SiteCatering
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireDigit = false;
-            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
-            
-            //Auth cockie
+            })
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
+
+            // Auth cookie
             builder.Services.ConfigureApplicationCookie(options =>
             {
                 options.Cookie.Name = "MyCompanyAuth";
@@ -56,31 +59,31 @@ namespace SiteCatering
                 options.SlidingExpiration = true;
             });
 
+            // Сессии
             builder.Services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(30); // Опционально
+                options.IdleTimeout = TimeSpan.FromMinutes(1440);
                 options.Cookie.HttpOnly = true;
-                options.Cookie.IsEssential = true; // Обязательно для использования без согласия пользователя
+                options.Cookie.IsEssential = true;
             });
 
-            //Функционал контроллеров
+            // Функционал контроллеров
             builder.Services.AddControllersWithViews();
 
             WebApplication app = builder.Build();
 
-         
-            //Статичные файлы
+            // Статичные файлы
             app.UseStaticFiles();
 
-
-            //Маршрутизация
-            app.UseRouting(); 
+            // Маршрутизация
+            app.UseRouting();
             app.UseSession();
 
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{Controller=Home}/{action=Index}/{id?}");
 
-            app.MapControllerRoute("default", "{Controller=Home}/{action=Index}/{id?}");
-            
-            //Аутонтификация и авторизация
+            // Аутентификация и авторизация
             app.UseCookiePolicy();
             app.UseAuthentication();
             app.UseAuthorization();

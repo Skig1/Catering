@@ -1,119 +1,8 @@
-﻿/* Общие настройки контейнера */
-.container,
-.cart-container,
-.dish-container,
-.admin-panel {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+﻿/* =============================================================================
+   ГЛОБАЛЬНЫЕ ОСНОВНЫЕ СТИЛИ (добавлены остальные, которые не входящие в Index, но оставлены из полного файла)
+   ============================================================================= */
 
-@media (max-width: 768px) {
-    .container,
-    .cart-container,
-    .dish-container,
-    .admin-panel {
-        padding: 15px;
-        margin: 10px;
-    }
-}
-
-/* Заголовки */
-.cart-title,
-.dish-title,
-.admin-panel h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    font-weight: 600;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
-}
-
-.dish-header,
-.section h3 {
-    text-align: center;
-    margin-bottom: 15px 0 30px 0;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #eee;
-    color: #007bff;
-    font-size: 1.2em;
-    font-weight: 500;
-}
-
-.category-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #2c3e50;
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    padding: 0 15px;
-}
-
-.category-title {
-    position: relative;
-    z-index: 1;
-    background: white;
-    padding-right: 15px;
-}
-
-.category-count {
-    background: #f8f9fa;
-    color: #7f8c8d;
-    font-size: 1.2rem;
-    padding: 5px 12px;
-    border-radius: 20px;
-    margin-left: 15px;
-}
-
-.category-divider {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
-    z-index: 0;
-}
-
-/* Сообщения об успехах/ошибках */
-.alert {
-    border-radius: 8px;
-    padding: 15px 20px;
-    margin-bottom: 25px;
-    font-size: 0.9rem;
-}
-
-.alert-success {
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    color: #155724;
-}
-
-.alert-danger {
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    color: #721c24;
-}
-
-/* Пустая корзина */
-.empty-cart {
-    text-align: center;
-    padding: 40px 0;
-    color: #6c757d;
-}
-
-    .empty-cart i {
-        font-size: 3rem;
-        color: #adb5bd;
-        margin-bottom: 10px;
-    }
-
-/* Базовые стили кнопок — единый фундамент */
+/* Базовые стили кнопок — остальные цвета (глобальные) */
 .btn,
 .btn-return,
 .btn-remove,
@@ -140,7 +29,6 @@
     color: #333;
 }
 
-    /* Эффект нажатия — лёгкая деформация */
     .btn:active,
     .btn-return:active,
     .btn-remove:active,
@@ -151,66 +39,60 @@
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     }
 
-/* Цвета кнопок — спокойные, приглушённые тона */
-/* Основные кнопки (действия, возврат, выход) */
+/* Цвета кнопок */
 .btn,
 .btn-return,
 .logout-btn {
-    background-color: #5D7C99; /* Мягкий серо‑синий (спокойный, не холодный) */
+    background-color: #5D7C99;
     color: white;
 }
 
     .btn:hover,
     .btn-return:hover,
     .logout-btn:hover {
-        background-color: #4A6482; /* Темнее на 15% */
+        background-color: #4A6482;
         box-shadow: 0 4px 12px rgba(93, 124, 153, 0.3);
     }
 
-/* Удаление/отмена */
 .btn-delete,
 .btn-remove {
-    background-color: #E8C58F; /* Тёплый пыльный розовый (деликатная альтернатива красному) */
+    background-color: #E8C58F;
     color: white;
 }
 
     .btn-delete:hover,
     .btn-remove:hover {
-        background-color: #D6A875; /* Чуть теплее и темнее */
+        background-color: #D6A875;
         box-shadow: 0 4px 12px rgba(232, 197, 143, 0.35);
     }
 
-/* Продолжение/далее */
 .btn-continue {
-    background-color: #8A9B7C; /* Оливково‑зелёный (природный, спокойный) */
+    background-color: #8A9B7C;
     color: white;
 }
 
     .btn-continue:hover {
-        background-color: #738465; /* Темнее на 12% */
+        background-color: #738465;
         box-shadow: 0 4px 12px rgba(138, 155, 124, 0.3);
     }
 
-/* Очистка/сброс */
 .btn-clear {
-    background-color: #A68B74; /* Тёплый бежевый с серым подтоном */
+    background-color: #A68B74;
     color: white;
 }
 
     .btn-clear:hover {
-        background-color: #907662; /* Темнее на 10% */
+        background-color: #907662;
         box-shadow: 0 4px 12px rgba(166, 139, 116, 0.35);
     }
 
-
-/* Иконки внутри кнопок */
+/* Иконки и отключённые состояния */
 .btn svg,
 .btn i {
     font-size: 1.1em;
     margin-right: 6px;
 }
 
-/* Отключённые кнопки */
 .btn:disabled,
 .btn-return:disabled,
 .btn-remove:disabled,
@@ -222,25 +104,11 @@
     pointer-events: none;
 }
 
-/* Стили для панели действий */
+/* Панель действий */
 .actions-toolbar .btn {
     margin-right: 10px;
     min-width: 90px;
 }
-
-/* Адаптация для мобильных */
-@media (max-width: 768px) {
-    .btn,
-    .btn-return,
-    .btn-remove,
-    .btn-continue,
-    .btn-clear,
-    .logout-btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-    }
-}
-
 
 /* Таблица корзины */
 table {
@@ -267,7 +135,7 @@ tbody tr:hover {
     background-color: #f8f9fa;
 }
 
-/* Ячейка с блюдом */
+/* Ячейки с блюдом и деталями */
 .dish-cell,
 .dish-item {
     display: flex;
@@ -279,7 +147,7 @@ tbody tr:hover {
 
 .dish-name,
 .CardBody h3 a {
-    font-weight: 600;
+    font-weight: 300;
     color: #34495e;
     margin-bottom: 8px;
 }
@@ -292,28 +160,16 @@ tbody tr:hover {
 
 .nutrition-value {
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 300;
     color: #333;
 }
 
-/* Поле количества */
-input[name="quantity"] {
-    width: 80px;
-    height: 40px;
-    text-align: center;
-    border: 1px solid #ced4da;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
+.dish-details {
+    color: #555;
+    line-height: 1.5;
 }
 
-    input[name="quantity"]:focus {
-        border-color: #007bff;
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-    }
-
-/* Итоговая цена */
+/* Цены */
 .item-total,
 .total-price {
     font-weight: 700;
@@ -331,201 +187,149 @@ input[name="quantity"] {
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
-    padding: padding: 20px 0;
+    padding: 20px 0;
     border-top: 1px solid #e9ecef;
 }
 
-/* Сетки */
-.dishes-grid,
-.List {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+/* Горизонтальный скролл для блюд */
+.dishes-horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 50px; /* УВЕЛИЧЕНО расстояние между элементами (было 30px) */
+    padding: 15px 10px;
+    width: 100%;
+}
+
+.dish-content {
+    flex: 1;
     padding: 0 15px;
+    overflow-y: auto;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    white-space: normal;
+    line-height: 1.6;
+    gap: 2.5rem; /* Увеличен отступ между элементами внутри карточки */
 }
 
-@media (max-width: 768px) {
-    .dishes-grid,
-    .List {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .category-header {
-        font-size: 1.6rem;
-    }
-
-    .dish-item {
-        flex-direction: column;
-    }
-
-    .dish-actions {
-        margin-top: 10px;
-    }
-}
-
-/* Карточки блюд */
-.dish-card,
-.Card {
-    background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
-}
-
-    .dish-card:hover,
-    .Card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-
-.image.fit {
-    display: block;
-    margin: 0 0 2em 0;
-    width: 100%;
-    height: 220px;
-    position: relative;
-}
-
-    .image.fit img {
-        border-radius: 0.375em;
+    .dish-content h3,
+    .dish-content p,
+    .CardBody p {
         display: block;
         width: 100%;
-        height: 100%;
-        object-fit: contain;
-        object-position: center;
-    }
-
-.CardBody {
-    padding: 20px;
-    text-align: left;
-}
-
-    .CardBody p {
         margin: 5px 0;
-        color: #666;
+        font-size: 14px;
+        color: #6c757d;
+        line-height: 1.5;
     }
 
-/* Детальная страница блюда */
-.dish-content {
+    .dish-content h3 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        margin-top: 0;
+        font-size: 18px;
+        color: #343a40;
+        font-weight: bold;
+        margin-bottom: 15px; /* Увеличен отступ снизу */
+    }
+
+    .dish-content p {
+        margin: 0 0 15px 0; /* Увеличен отступ снизу */
+    }
+
+    .dish-content a {
+        color: #495057;
+        text-decoration: none;
+    }
+
+        .dish-content a:hover {
+            text-decoration: underline;
+            color: #343a40;
+        }
+
+.dish-actions {
+    padding: 20px 15px 20px 15px; /* Увеличены отступы
+        /* Увеличены отступы сверху и снизу */
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    justify-content: space-between;
+    gap: 12px; /* Увеличен промежуток между кнопками */
+    border-top: 1px solid #e9ecef;
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.9);
+    white-space: normal;
 }
 
-@media (min-width: 768px) {
-    .dish-content {
-        flex-direction: row;
+    .dish-actions .btn,
+    .btn-order,
+    .btn-details {
+        padding: 10px 16px; /* Увеличены отступы внутри кнопок */
+        border-radius: 6px; /* Слегка увеличены радиусы скругления */
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        white-space: normal;
     }
+
+/* Кнопки для конкретных действий */
+.btn-order {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
 }
 
-.dish-image-container {
-    flex: 1;
-    min-width: 300px;
+    .btn-order:hover {
+        background-color: #5a6268;
+        border-color: #5a6268;
+    }
+
+.btn-details {
+    background-color: #ababab;
+    border-color: #ababab;
+    color: white;
 }
 
-.dish-image {
+    .btn-details:hover {
+        background-color: #949494;
+    }
+
+/* Для отсутствия фото */
+.no-photo {
     width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-    aspect-ratio: 1/1;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.dish-details {
-    flex: 2;
-    padding: 0 1rem;
-}
-
-.nutrition-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-}
-
-.nutrition-item {
+    height: 100%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e9ecef 100%);
+    color: #6c757d;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px 10px 0 0;
 }
 
-.price {
-    color: #d32f2f;
-    font-size: 1.3rem;
-}
-
-.dish-section {
-    margin-bottom: 1.5rem;
-}
-
-.section-title {
-    font-size: 1.3rem;
-    color: #444;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.3rem;
-    border-bottom: 2px solid #eee;
-}
-
-.section-content {
-    line-height: 1.6;
-    color: #555;
-}
-
-/* Категории блюд (бейджи) */
-.badge {
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.menu-category {
-    background-color: #e3f2fd;
-    color: #1976d2;
-}
-
-.food-category {
-    background-color: #e8f5e9;
-    color: #2e7d32;
-}
-
-/* Стили для категорий */
-.category-section {
-    margin: 60px 0;
-    position: relative;
-}
-
-.category-header-container {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-/* Панель администратора: специфические стили */
+/* Панель администратора */
 .section {
     background-color: white;
     border: 1px solid #e0e0e0;
-    border-radius: 6px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 8px; /* Слегка увеличены радиусы скругления */
+    padding: 25px; /* Увеличены отступы */
+    margin-bottom: 30px; /* Увеличен отступ снизу */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Немного усилена тень */
 }
 
 .categories-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 15px; /* Увеличено расстояние между элементами */
+    margin-bottom: 25px; /* Увеличен отступ снизу */
 }
 
 .category-item {
-    padding: 12px 20px;
+    padding: 14px 24px; /* Увеличены отступы внутри элементов */
     background-color: #e9f0ff;
-    border-radius: 4px;
+    border-radius: 6px; /* Слегка увеличены радиусы скругления */
     cursor: pointer;
     font-weight: 500;
     color: #0056b3;
@@ -542,45 +346,147 @@ input[name="quantity"] {
     }
 
 .actions-toolbar {
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Увеличен отступ снизу */
 }
 
 .dish-info {
     flex: 1;
-    margin-right: 20px;
-}
-
-.dish-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.dish-details {
-    color: #555;
-    line-height: 1.5;
+    margin-right: 25px; /* Увеличен отступ справа */
 }
 
 .logout-form {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px; /* Увеличен отступ сверху */
 }
 
-/* Адаптивные корректировки */
-@media (max-width: 768px) {
-    .Card {
-        max-width: 100%;
-    }
 
-    .image.fit {
-        height: 200px;
-    }
-
-    .dish-image-container {
-        min-width: auto;
-    }
-
-    .dish-details {
-        padding: 0;
-    }
+/* Контейнер страницы блюда */
+.dish-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* Заголовок и категории */
+.dish-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.dish-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.dish-categories {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+    .dish-categories .badge {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+/* Основное содержимое блюда: лево — изображение, право — детали */
+.dish-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Лево: изображение, право: детали */
+    gap: 30px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+/* Контейнер для изображения */
+.dish-image-container {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Изображение блюда — фиксированный размер с корректным обрезанием */
+.dish-image {
+    width: 100%;
+    height: 400px; /* Фиксированная высота */
+    object-fit: cover; /* Сохраняет пропорции, обрезает лишнее */
+    object-position: center; /* Центрирует изображение */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block; /* Убирает лишние отступы */
+}
+
+/* Детали блюда (право) */
+.dish-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Блок с питательной информацией */
+.nutrition-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.nutrition-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nutrition-label {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.nutrition-value {
+    font-weight: 600;
+    color: #495057;
+}
+
+    .nutrition-value.price {
+        color: #27ae60; /* Зелёный для цены */
+        font-size: 1.2rem;
+    }
+
+/* Секции (состав, описание) */
+.dish-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.section-content {
+    line-height: 1.6;
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+/* Форма добавления в корзину */
+.dish-container form {
+    width: 100%;
+}
+
+/* =============================================================================
+   ГЛОБАЛЬНЫЕ ДОПОЛНИТЕЛЬНЫЕ (из остатков полного файла, не входящие в Index)
+   ============================================================================= */
+
+/* Пустая корзина

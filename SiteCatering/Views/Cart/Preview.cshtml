@@ -1,0 +1,105 @@
+﻿@model List<SiteCatering.Models.CartItem>  
+@{
+    ViewData["Title"] = "Предварительный просмотр корзины";
+}
+
+<div class="container">
+    <h2>Корзина товаров (предварительный просмотр)</h2>
+
+    @if (Model != null && Model.Any())
+    {
+        <!-- Таблица корзины (скопируйте структуру из вашего Index.cshtml) -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Фото</th>
+                    <th>Название</th>
+                    <th>Цена за шт.</th>
+                    <th>Вес за шт. (г)</th>
+                    <th>Количество</th>
+                    <th>Итого</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                @foreach (var item in Model)
+                {
+                    <tr data-dishid="@item.DishId">
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.PhotoUrl))
+                            {
+                                <img src="@Url.Content(item.PhotoUrl)" alt="@item.Name" class="img-thumbnail" style="width: 50px;" />
+                            }
+                            else
+                            {
+                                <span>Нет фото</span>
+                            }
+                        </td>
+                        <td>@item.Name</td>
+                        <td>@item.Price руб.</td>
+                        <td>@item.Weight</td>
+                        <td>
+                            <!-- Поле для изменения количества (AJAX-инпут, как в Index.cshtml) -->
+                            <input type="number" class="form-control quantity-input" value="@item.Quantity" min="1" max="99" data-dishid="@item.DishId" />
+                        </td>
+                        <td id="total-price-@item.DishId">@item.TotalPrice руб.</td>
+                        <td>
+                            <!-- Кнопка удаления (как в Index.cshtml) -->
+                            <form method="post" action="@Url.Action("Remove", "Cart")" style="display:inline;">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="dishId" value="@item.DishId" />
+                                <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Общая сумма корзины -->
+        <h4>Общая сумма: <span id="total-cart-price">@Model.Sum(i => i.TotalPrice)</span> руб.</h4>
+        <h5>Общий вес: <span>@Model.Sum(i => i.TotalWeight)</span> г.</h5>
+
+        <!-- Действия -->
+        <div class="mt-3">
+            <!-- Кнопка для возврата в корзину -->
+            <a href="@Url.Action("Index", "Cart")" class="btn btn-secondary">Вернуться к корзине</a>
+
+            <!-- Новая кнопка для скачивания DOCX -->
+            <a href="@Url.Action("DownloadDocx", "Cart")" class="btn btn-primary" target="_blank">Скачать как DOCX (отчёт)</a>
+
+            <!-- Кнопка очистки корзины (как в Index.cshtml) -->
+            <form method="post" action="@Url.Action("Clear", "Cart")" style="display:inline;">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-warning">Очистить корзину</button>
+            </form>
+        </div>
+
+    }
+    else
+    {
+        <p>Ваша корзина пуста. <a href="@Url.Action("Index", "Home")">Посмотрите меню</a>.</p>
+    }
+</div>
+
+<!-- JavaScript для AJAX обновления количества (скопируйте из Index.cshtml, если уже есть) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).on('change', '.quantity-input', function () {
+        var dishId = $(this).data('dishid');
+        var quantity = $(this).val();
+
+        $.post('@Url.Action("UpdateQuantityAjax", "Cart")', {
+            dishId: dishId,
+            quantity: quantity,
+            __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+        }, function (data) {
+            if (data.success) {
+                $('#total-price-' + dishId).text(data.totalPrice + ' руб.');
+                $('#total-cart-price').text(data.totalCartPrice + ' руб.');
+            } else {
+                alert('Ошибка обновления количества!');
+            }
+        });
+    });
+</script>

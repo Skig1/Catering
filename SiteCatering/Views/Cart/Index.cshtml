@@ -7,7 +7,7 @@
 <div class="cart-container">
     <h2 class="cart-title">@ViewBag.Title</h2>
 
-    <!-- Сообщения об успехе/ошибках -->
+
     @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert alert-success">
@@ -22,7 +22,7 @@
         </div>
     }
 
-    <!-- Пустая корзина -->
+
     @if (!Model.Any())
     {
         <div class="empty-cart">
@@ -32,7 +32,7 @@
     }
     else
     {
-        <!-- Таблица товаров -->
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -45,53 +45,57 @@
             </thead>
             <tbody>
                 @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            <a asp-area="" 
-                               asp-controller="Dishes"
-                               asp-action="Show"
-                               asp-route-id="@item.DishId"
-                               class="dish-name">
-                                @item.Name
-                            </a>
-                        </td>
-                        <td>@item.Price</td>
-                        <td>
-                            <input type="number"
-                                   name="quantity"
-                                   data-dish-id="@item.DishId"
-                                   value="@item.Quantity"
-                                   min="1"
-                                   max="99"
-                                   class="form-control form-control-sm"
-                                   style="width: 80px;" />
-                        </td>
-                        <td class="item-total">@item.TotalPrice</td>
-                        <td>
-                            <form asp-controller="Cart"
-                                  asp-action="Remove"
-                                  method="post"
-                                  class="d-inline">
-                                @Html.AntiForgeryToken()
-                                <input type="hidden" name="dishId" value="@item.DishId" />
-                                <button type="submit"
-                                        class="btn btn-sm btn-remove"
-                                        onclick="return confirm('Удалить @item.Name из корзины?');">
-                                    Удалить
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                }
+{
+    <tr>
+        <td>
+            <a asp-area="" asp-controller="Dishes" asp-action="Show" asp-route-id="@item.DishId" class="dish-name">
+                @item.Name
+            </a>
+        </td>
+        <td>@item.Price</td>
+        <td>
+            <input type="number"
+                   name="quantity"
+                   data-dish-id="@item.DishId"
+                   data-weight="@(item.Weight)"  
+                   data-name="@item.Name"
+                   value="@item.Quantity"
+                   min="1"
+                   max="99"
+                   class="form-control form-control-sm"
+                   style="width: 80px;" />
+        </td>
+        <td class="item-total">@item.TotalPrice</td>
+        <td>
+            <form asp-controller="Cart" asp-action="Remove" method="post" class="d-inline">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="dishId" value="@item.DishId" />
+                <button type="submit" onclick="return confirm('Удалить @item.Name из корзины?');">
+                    Удалить
+                </button>
+            </form>
+        </td>
+    </tr>
+}
+
             </tbody>
         </table>
 
-        <!-- Блок с итоговой суммой и действиями -->
+
         <div class="cart-footer">
             <h4>Общая сумма: <span id="total-cart-price" class="total-price">@Model.Sum(i => i.TotalPrice)</span> ₽</h4>
+
+            <div id="calculationBlock">
+                <input type="number" id="peopleCount" placeholder="Количество человек" min="1" />
+                <button id="calculateBtn">Рассчитать на человека</button>
+                <div id="calculationResults" style="display: none;">
+                    <p>Вес еды на человека: <span id="foodWeightPerPerson">0</span> г</p>
+                    <p>Вес напитков на человека: <span id="drinkWeightPerPerson">0</span> г</p>
+                </div>
+            </div>
+
+
             <div>
-               
                 <form asp-controller="Cart"
                       asp-action="Clear"
                       method="post"
@@ -104,6 +108,11 @@
                     </button>
                 </form>
             </div>
+            @using (Html.BeginForm("DownloadDocx", "Cart", FormMethod.Post))
+            {
+                <button type="submit" class="btn btn-primary">Скачать корзину как DOCX</button>
+            }
         </div>
+
     }
 </div>

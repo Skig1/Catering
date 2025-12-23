@@ -19,6 +19,7 @@ namespace SiteCatering.Infrastructure
             dishesDTO.Weight = entity.Weight;
             dishesDTO.Сompound = entity.Сompound;
             dishesDTO.Name = entity.Name;
+            dishesDTO.IsRecomended = entity.IsRecommended;
 
             return dishesDTO;
         }

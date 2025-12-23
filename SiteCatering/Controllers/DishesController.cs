@@ -16,7 +16,7 @@ namespace SiteCatering.Controllers
             _dataManager = dataManager;
         }
 
-        // GET: /Dishes?category=Буффетное
+
         public async Task<IActionResult> Index(string category)
         {
             IEnumerable<Dish> list;
@@ -27,7 +27,6 @@ namespace SiteCatering.Controllers
             }
             else
             {
-                // Преобразуем строку в enum
 
                 if (Enum.TryParse<MenuCategoryEnum>(category, out var enumCategory))
                 {
@@ -35,7 +34,7 @@ namespace SiteCatering.Controllers
                 }
                 else
                 {
-                    // Если категория не найдена — показываем все блюда
+
                     list = await _dataManager.DishRepository.GetDishesAsync();
                 }
             }

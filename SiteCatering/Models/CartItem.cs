@@ -3,23 +3,17 @@
     public class CartItem
     {
 
-        // Основной идентификатор блюда (из БД)
         public int DishId { get; set; }
-
-        // Данные блюда, нужные для отображения в корзине
         public string Name { get; set; }
-        public int Price { get; set; }      // Цена за единицу (int)
-        public int Weight { get; set; }    // Вес за единицу (г)
-        public string? PhotoUrl { get; set; } // Путь к изображению (может отсутствовать)
-
-        // Количество в корзине
+        public int Price { get; set; }     
+        public int Weight { get; set; }    
+        public string? PhotoUrl { get; set; } 
         public int Quantity { get; set; } = 1;
 
-        // Рассчитываемые свойства (только для чтения)
         public int TotalPrice => Price * Quantity;
         public int TotalWeight => Weight * Quantity;
 
-        // Конструктор для удобства
+      
         public CartItem(int dishId, string name, int price, int weight, string? photoUrl = null)
         {
             DishId = dishId;
@@ -30,7 +24,7 @@
             Quantity = 1;
         }
 
-        // Метод для изменения количества
+       
         public void SetQuantity(int quantity)
         {
             if (quantity < 1)

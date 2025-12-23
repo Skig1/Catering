@@ -10,5 +10,6 @@ namespace SiteCatering.Domain.Repositories.Abstract
         Task SaveDishAsync(Dish dish);
         Task DeleteDishAsync(int id);
         Task<IEnumerable<Dish>> GetDishesByCategoryAsync(MenuCategoryEnum category);
+        Task<IEnumerable<Dish>> GetRecommendedDishesAsync();
     }
 }

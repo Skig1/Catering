@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Dish>
+@{
+    ViewBag.Title = "Рекомендованные блюда";
+    IEnumerable<Dish>? dishes = ViewBag.Dishes as IEnumerable<Dish>;
+}
+
+<div class="admin-panel">
+    <h1>Рекомендованные блюда</h1>
+
+    @if (dishes != null)
+    {
+        <p><strong>Отладка:</strong> Найдено блюд: @dishes.Count(). Если 0 — проблема в контроллере/БД.</p>
+    }
+    else
+    {
+        <p><strong>Отладка:</strong> ViewBag.Dishes null — проверь контроллер.</p>
+    }
+
+    <form asp-area="" asp-controller="Admin" asp-action="RecommendedDishes" method="post">
+        <div class="section">
+         
+            <h3>Выберите рекомендованные блюда</h3>
+            <p>Отметьте чекбоксы для блюд, которые хотите сделать рекомендованными.</p>
+
+            @if (dishes != null && dishes.Any())
+            {
+                foreach (Dish entity in dishes)
+                {
+                    <div class="dish-item" data-category="@(entity.MenuCategoryEnum.ToString() ?? "Не указана")">
+                        <label>   
+                            <div class="form-check"> <input type="checkbox" class="form-check-input" id="dish-@entity.Id" name="selectedIds" value="@entity.Id" @(entity.IsRecommended ? "checked" : "") /> <label class="form-check-label" for="dish-@entity.Id"> @entity.Name </label> </div>
+                        </label>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Нет доступных блюд или ошибка загрузки данных.</p>
+            }
+        </div>
+
+        <div class="actions-toolbar">
+          
+            <ul class="actions">
+
+                <li>
+                    <input type="submit" value="Сохранить рекомендации" class="button primary fit" /> 
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Admin" asp-action="Index" class="button">Отмена</a>
+                </li>
+            </ul>
+        </div>
+    </form>
+
+  
+    <div style="margin-top: 20px;">
+        <a asp-action="Index" class="button">Назад к списку блюд</a> 
+    </div>
+</div>
+
+
+<style>
+    .dish-item {
+        margin: 10px 0;
+        display: block; /
+    }
+
+    .dish-info {
+        margin-left: 5px; 
+    }
+</style>

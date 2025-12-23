@@ -13,6 +13,7 @@ namespace SiteCatering.Controllers.Admin
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DishesEdit(Dish dish, IFormFile? TitleImageFile)
         {
             if (!ModelState.IsValid)
@@ -32,6 +33,7 @@ namespace SiteCatering.Controllers.Admin
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DishesDelete(int id)
         {
             await _dataManager.DishRepository.DeleteDishAsync(id);

@@ -1,0 +1,7 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/SiteCatering/appsettings.Development.json
+/SiteCatering/appsettings.production.json
+/SiteCatering/appsettings.staging.json

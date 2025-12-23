@@ -1,0 +1,11 @@
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic01.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic02.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic03.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic04.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic05.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic06.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic07.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic08.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic09.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic10.jpg
+C:\Users\Слава\source\repos\SiteCatering\SiteCatering\wwwroot\img\pic11.jpg

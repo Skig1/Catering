@@ -1,0 +1,248 @@
+﻿/* =============================================================================
+   ГЛОБАЛЬНЫЕ ОСНОВНЫЕ СТИЛИ (копируем неизменённые, чтобы статичный контент работал, включая стили для Index)
+   ============================================================================= */
+
+/* Глобальные контейнеры и базовые стили */
+.container,
+.cart-container,
+.admin-panel {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    /* Заголовки */
+    .cart-title,
+    .admin-panel h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        font-weight: 600;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+    }
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding: 0 15px;
+}
+
+.category-header-container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.category-title {
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding-right: 15px;
+}
+
+.category-count {
+    background: #f8f9fa;
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+.category-divider {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+    z-index: 0;
+}
+
+/* Сообщения об успехах/ошибках (alert'ы) — оставляем глобальными, они не затрагивают блюдо сильнее специфичных */
+.alert {
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Базовые стили кнопок — единый фундамент (глобальные) */
+.btn,
+.btn-return,
+.btn-remove,
+.btn-continue,
+.btn-clear,
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+    .btn:active,
+    .btn-return:active,
+    .btn-remove:active,
+    .btn-continue:active,
+    .btn-clear:active,
+    .logout-btn:active {
+        transform: translateY(1px) scale(0.98);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+    .btn-success:hover {
+        background-color: #218838;
+        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    }
+
+/* Иконки и отключённые состояния */
+.btn svg,
+.btn i {
+    font-size: 1.1em;
+    margin-right: 6px;
+}
+
+.btn:disabled,
+.btn-return:disabled,
+.btn-remove:disabled,
+.btn-continue:disabled,
+.btn-clear:disabled,
+.logout-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Поле количества (для форм в Index) */
+input[name="quantity"] {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+    input[name="quantity"]:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+
+/* Сетки для блюд */
+.dishes-grid,
+.List,
+.dishesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 50px; /* УВЕЛИЧЕНО расстояние между карточками (было 35px) */
+    padding: 0 15px;
+}
+
+/* Карточки блюд (глобальные для grids) */
+.dish-card,
+.Card {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 550px; /* Уже есть — оставляем */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+}
+
+    .dish-card:hover,
+    .Card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+.dish-image,
+.image.fit {
+    height: 270px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+    .dish-image img,
+    .image.fit img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Обрезаем изображение, сохраняя пропорции */
+        object-position: center; /* Центрируем картинку */
+        display: block; /* Убираем лишние отступы */
+    }
+
+
+.CardBody {
+    padding: 25px; /* Увеличены отступы внутри карточки */
+    text-align: left;
+}
+
+/* Категории (бейджи) */
+.badge {
+    padding: 0.6rem 1.2rem; /* Увеличены отступы внутри бейджей */
+    border-radius: 22px; /* Слегка увеличены радиусы скругления */
+    font-size: 0.95rem; /* Немного увеличен размер шрифта */
+    font-weight: 600;
+}
+
+.menu-category {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.food-category {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Стили для категорий */
+.category-section {
+    margin: 70px 0; /* Увеличены отступы сверху и снизу */
+    position: relative;
+}

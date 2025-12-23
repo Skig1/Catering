@@ -15,5 +15,7 @@ namespace SiteCatering.Models
         public int? Weight { get; set; }
         public string? Photo { get; set; }
         public string? Name { get; set; }
+
+        public bool? IsRecomended {  get; set; } = false;
     }
 }

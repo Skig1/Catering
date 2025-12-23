@@ -42,8 +42,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Слава/source/repos/SiteCatering/SiteCatering/Views/Admin/RecommendedDishes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVjb21tZW5kZWREaXNoZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Слава/source/repos/SiteCatering/SiteCatering/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Слава/source/repos/SiteCatering/SiteCatering/Views/Cart/Preview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQcmV2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Слава/source/repos/SiteCatering/SiteCatering/Views/Dishes/Index.cshtml]
@@ -52,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Слава/source/repos/SiteCatering/SiteCatering/Views/Dishes/Show.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaGVzXFNob3cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Слава/source/repos/SiteCatering/SiteCatering/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Слава/source/repos/SiteCatering/SiteCatering/Views/Home/Index.cshtml]

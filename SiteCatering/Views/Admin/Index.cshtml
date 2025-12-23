@@ -2,8 +2,6 @@
     string strTitle = "Панель Администратора";
     ViewBag.Title = strTitle;
     IEnumerable<Dish>? dishes = ViewBag.Dishes;
-
-
 }
 
 <div class="admin-panel">
@@ -18,6 +16,10 @@
                     @category
                 </div>
             }
+     
+            <div class="category-item">
+                <a asp-area="" asp-controller="Admin" asp-action="RecommendedDishes" class="btn">Рекомендованные</a>
+            </div>
         </div>
     </div>
 
@@ -39,22 +41,7 @@
                                     @entity.Name
                                 </a>
                             </div>
-                            <div class="dish-details">
-                                <strong>Категория меню:</strong> @entity.MenuCategoryEnum<br />
-                                <strong>Категория блюда:</strong> @entity.FoodCategoryEnum<br />
-                                @if (entity.Price.HasValue)
-                                {
-                                    <strong>Цена:</strong> @entity.Price
-                                }
-                                @if (entity.Weight.HasValue)
-                                {
-                                    <strong>Вес:</strong> @entity.Weight 
-                                }
-                                @if (entity.Kkal.HasValue)
-                                {
-                                    <strong>Калорийность:</strong> @entity.Kkal 
-                                }
-                            </div>
+                          
                         </div>
 
                         <div class="dish-actions">
@@ -84,4 +71,3 @@
         </form>
     </div>
 </div>
-

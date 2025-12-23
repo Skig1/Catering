@@ -29,5 +29,7 @@ namespace SiteCatering.Domain.Entities
 
         [Display(Name = "Фотография блюда")]
         public string? Photo {  get; set; }
+
+        public bool IsRecommended { get; set; } = false;
     }
 }
