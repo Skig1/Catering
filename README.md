@@ -69,7 +69,7 @@ Views — Razor views
 The Repository pattern and the DataManager class are used for working with data.
 
 Clone the repository:
-git clone https://github.com/your-username/SiteCatering.git
+git clone https://github.com/Skig1/SiteCatering.git
 Open the project in Visual Studio
 Restore dependencies:
 dotnet restore
