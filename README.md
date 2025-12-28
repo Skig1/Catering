@@ -5,7 +5,7 @@ This project is based on the **[Editorial]** template from the [HTML5UP](https:/
 ## Original Template License
 - **Author:** ["HTML5UP"]
 - **License:** Creative Commons Attribution 3.0 Unported (CC BY 3.0)
-- **Template Link:** https://html5up.net/Editorial
+- **Template Link:** https://html5up.net/editorial
 - **License Terms:** https://creativecommons.org/licenses/by/3.0/
 
 ## Changes
